@@ -1,0 +1,48 @@
+﻿@model WebApplication1.Models.Cliente
+
+@{
+    ViewData["Title"] = "Detalles de Clientes";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+			<div class="d-flex align-items-center bg-success text-white py-2 px-3 rounded mb-3 shadow-sm">
+				<i class="bi bi-person-lines-fill fs-4 me-2"></i>
+				<h4 class="mb-0 fw-bold">Detalles del Cliente</h4>
+			</div>
+
+            <div class="card shadow rounded-4">
+                <div class="card-body">
+                    <h5 class="mb-4 text-dark">Detalles del cliente</h5>
+                
+                    <dl class="row">
+                        <dt class="col-sm-3">Nombre</dt>
+                        <dd class="col-sm-9">@Model.Nombre</dd>
+                        
+                        <dt class="col-sm-3">Dirección</dt>
+                        <dd class="col-sm-9">@Model.Dirección</dd>
+
+                        <dt class="col-sm-3">Teléfono</dt>
+                        <dd class="col-sm-9">@Model.Telefono</dd>
+
+                        <dt class="col-sm-3">Correo</dt>
+                        <dd class="col-sm-9">@Model.Correo</dd>
+
+                        <dt class="col-sm-3">DNI</dt>
+                        <dd class="col-sm-9">@Model.DNI</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-3">
+    <div class="row justify-content-center">
+        <div class="col-md-8 d-flex justify-content-between">
+            <a asp-action="Index" class="btn btn-accion btn-sm">← Volver</a>
+            <a asp-action="Edit" asp-route-id="@Model.IDCliente" class="btn btn-accion btn-editar btn-sm">Editar</a>
+        </div>
+    </div>
+</div>
