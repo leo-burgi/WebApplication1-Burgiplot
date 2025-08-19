@@ -42,9 +42,9 @@
                                     <td>@Html.DisplayFor(modelItem => item.Correo)</td>
                                     <td>@Html.DisplayFor(modelItem => item.DNI)</td>
                                     <td class="text-end">
-                                        <a asp-action="Edit" asp-route-id="@item.IDCliente" class="btn btn-accion btn-editar btn-sm me-1">Editar</a>
-                                        <a asp-action="Details" asp-route-id="@item.IDCliente" class="btn btn-accion btn-ver btn-sm me-1">Detalles</a>
-                                        <a asp-action="Delete" asp-route-id="@item.IDCliente" class="btn btn-accion btn-eliminar btn-sm">Eliminar</a>
+                                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-accion btn-editar btn-sm me-1">Editar</a>
+                                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-accion btn-ver btn-sm me-1">Detalles</a>
+                                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-accion btn-eliminar btn-sm">Eliminar</a>
                                     </td>
                                 </tr>
                             }

@@ -2,10 +2,10 @@
 
 #nullable disable
 
-namespace WebApplication1.Migrations
+namespace WebApplication1.Migrations.Burgiplot
 {
     /// <inheritdoc />
-    public partial class Inicial : Migration
+    public partial class InitBurgiplot : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

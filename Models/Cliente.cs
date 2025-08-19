@@ -8,7 +8,7 @@ namespace WebApplication1.Models
     public class Cliente
     {
         [Key]
-        public int IDCliente { get; set; }
+        public int Id { get; set; }
         
         [Required(ErrorMessage = "El campo Nombre es obligatorio.")]
         public string Nombre { get; set; }
