@@ -1,8 +1,192 @@
 ﻿@{
-    ViewData["Title"] = "Gráfica y estética vehicular";
+    ViewData["Title"] = "";
 }
 
-<div class="text-center mt-5">
-    <h1 class="display-4">Bienvenidos a LA PAGINA</h1>
-    <p class=" lead"> Portal para gestionar clientes, órdenes, control de stock de materiales y muchas cosas más que Lautaro jamás pensó hacer</p>
-</div>
+<section class="hero text-white py-5">
+    <div class="container">
+        <div class="row align-items-center g-4">
+            <div class="col-lg-7">
+                <span class="badge bg-danger text-break fw-semibold mb-3"  >Potencia tu empresa</span>
+                <h1 class="display-5 fw-bold mb-3">Automatizá tu operación</h1>
+                <p class="lead mb-4">
+                    Centralizá <strong>clientes, órdenes de trabajo, stock y facturación</strong> en un solo lugar.<br />
+                    Menos papeles, menos planillas, más tiempo disponible, más trabajo hecho.<br />
+                    100% adaptable a cualquier dispositivo.
+                </p>
+
+                <div class="d-flex flex-wrap gap-2">
+                    <a asp-controller="Ordenes" asp-action="Index" class="btn btn-light btn-lg">
+                        <i class="bi bi-play-circle me-2"></i>Probar demo
+                    </a>
+                    <a asp-controller="Clientes" asp-action="Create" class="btn btn-outline-light btn-lg">
+                        <i class="bi bi-person-plus me-2"></i>Cargar mi primer cliente
+                    </a>
+                </div>
+
+                <ul class="list-unstyled d-flex flex-wrap gap-4 mt-4 mb-0">
+                    <li class="d-flex align-items-center">
+                        <i class="bi bi-shield-check me-2"></i>Datos en tu propio servidor
+                    </li>
+                    <li class="d-flex align-items-center">
+                        <i class="bi bi-phone me-2"></i>Responsive y rápido
+                    </li>
+                    <li class="d-flex align-items-center">
+                        <i class="bi bi-bar-chart-line me-2"></i>KPIs listos para decidir
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="card shadow-lg border-0 rounded-4">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-lightning-charge display-6 me-2 text-primary"></i>
+                            <h5 class="mb-0">Beneficios clave</h5>
+                        </div>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-3 d-flex">
+                                <i class="bi bi-check2-circle me-2 fs-5 text-primary"></i>
+                                <span><strong>Órdenes al día:</strong> creá, asigná y seguí trabajos en tiempo real.</span>
+                            </li>
+                            <li class="mb-3 d-flex">
+                                <i class="bi bi-check2-circle me-2 fs-5 text-primary"></i>
+                                <span><strong>Stock bajo control:</strong> alertas de faltantes y consumo por orden.</span>
+                            </li>
+                            <li class="mb-3 d-flex">
+                                <i class="bi bi-check2-circle me-2 fs-5 text-primary"></i>
+                                <span><strong>Facturación simplificada:</strong> generá comprobantes/archivos para tu sistema.*</span>
+                            </li>
+                            <li class="mb-1 d-flex">
+                                <i class="bi bi-check2-circle me-2 fs-5 text-primary"></i>
+                                <span><strong>Reportes y KPI:</strong> ingresos, materiales, productividad y más.</span>
+                            </li>
+                        </ul>
+                        <p class="small text-muted mt-3 mb-0">
+                            *La integración fiscal requiere configuración adicional.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 bg-body-tertiary">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Todo lo que necesitás, sin fricción</h2>
+            <p class="text-secondary mb-0">Diseñado para que trabajes y el sistema no estorbe.</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm feature-card">
+                    <div class="card-body">
+                        <i class="bi bi-people fs-2 mb-3 d-block text-primary"></i>
+                        <h5 class="card-title">Clientes</h5>
+                        <p class="card-text">Historial de pedidos, datos de contacto y seguimiento en un mismo lugar.</p>
+                        <a asp-controller="Clientes" asp-action="Index" class="stretched-link">Ver clientes</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm feature-card">
+                    <div class="card-body">
+                        <i class="bi bi-clipboard-check fs-2 mb-3 d-block text-primary"></i>
+                        <h5 class="card-title">Órdenes</h5>
+                        <p class="card-text">Estado, responsable, archivos y plazos. Todo trazable de punta a punta.</p>
+                        <a asp-controller="Ordenes" asp-action="Index" class="stretched-link">Ver órdenes</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm feature-card">
+                    <div class="card-body">
+                        <i class="bi bi-box-seam fs-2 mb-3 d-block text-primary"></i>
+                        <h5 class="card-title">Stock</h5>
+                        <p class="card-text">Movimientos por orden, alertas de mínimos y valorización de materiales.</p>
+                        <a asp-controller="Stock" asp-action="Index" class="stretched-link">Ver stock</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm feature-card">
+                    <div class="card-body">
+                        <i class="bi bi-receipt fs-2 mb-3 d-block text-primary"></i>
+                        <h5 class="card-title">Facturación</h5>
+                        <p class="card-text">Comprobantes/archivos listos para tu sistema y reportes de ingresos.</p>
+                        <a asp-controller="Facturacion" asp-action="Index" class="stretched-link">Ver facturación</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center g-4">
+            <div class="col-lg-6">
+                <h2 class="fw-bold mb-3">¿Cómo funciona?</h2>
+                <ol class="ps-3">
+                    <li class="mb-2"><strong>Cargá clientes y materiales</strong> en minutos.</li>
+                    <li class="mb-2"><strong>Gestioná órdenes</strong> y registrá consumos automáticamente.</li>
+                    <li class="mb-2"><strong>Emití comprobantes/reportes</strong> y seguí tus <strong>KPI</strong>.</li>
+                </ol>
+                <div class="d-flex gap-2 mt-3">
+                    <a asp-controller="Ordenes" asp-action="Create" class="btn btn-primary">
+                        <i class="bi bi-plus-circle me-2"></i>Nueva orden
+                    </a>
+                    <a asp-controller="Clientes" asp-action="Index" class="btn btn-outline-primary">
+                        <i class="bi bi-people me-2"></i>Ver clientes
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="ratio ratio-16x9 rounded-4 shadow-sm border placeholder-illustration">
+                    <!-- Podés reemplazar este bloque por una imagen/iframe del dashboard -->
+                    <div class="d-flex flex-column justify-content-center align-items-center text-secondary">
+                        <i class="bi bi-bar-chart-line fs-1"></i>
+                        <p class="mb-0 mt-2">Tu dashboard con KPI vive acá.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 bg-body-tertiary">
+    <div class="container text-center">
+        <h3 class="fw-bold mb-3">¿Listo para trabajar mejor?</h3>
+        <p class="text-secondary mb-4">
+            Empezá con tus primeros clientes y órdenes. Si algo molesta, lo ajustamos.
+        </p>
+        <a asp-controller="Clientes" asp-action="Create" class="btn btn-success btn-lg">
+            <i class="bi bi-rocket-takeoff me-2"></i>Empezar ahora
+        </a>
+    </div>
+</section>
+
+<style>
+    /* Hero con gradiente, contraste alto y sin depender de imágenes */
+    .hero {
+        background: linear-gradient(150deg, #198754 0%, #1c3e66 40%, #198754 100%);
+    }
+
+    .feature-card {
+        transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 .75rem 1.5rem rgba(0,0,0,.1);
+        }
+
+    .placeholder-illustration {
+        background-image: radial-gradient(rgba(0,0,0,.05) 1px, transparent 1px);
+        background-size: 16px 16px;
+    }
+</style>

@@ -4,9 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Burgiplot</title>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
     <style>
+
         html, body {
             height: 100%;
             margin: 0;
@@ -17,119 +20,163 @@
             flex-direction: column;
         }
 
-        main {
-            flex: 1;
-        }
         :root {
             --verde-burgiplot: #198754;
             --verde-claro: #e9f7ef;
             --gris-boton: #f0f0f0;
         }
 
-        .navbar-main,
-        .navbar-secondary {
-            background-color: var(--verde-burgiplot);
+        /* ---------- NAV SUPERIOR (LOGO) ---------- */
+        header {
+            position: relative;
+            z-index: 1030;
         }
 
-        .navbar-main .container 
-            {
-                display: flex;
+        .navbar-logo { /* barra del logo */
+            /* usa el color del tema */
+            background-color: var(--bs-body-bg);
+        }
+
+            .navbar-logo .container {
                 justify-content: center;
-                align-items: center;
-                height: 50px; /* Adjusted to fit 100px logo with padding */
             }
 
-        .navbar-brand 
-        {
-            padding: 0; /* Remove default padding */
+        .navbar-brand {
+            padding: .25rem 0; /* sin rellenos raros */
+            line-height: 1; /* elimina espacio de línea */
+            isolation: isolate; /* limita el blend/shadow al logo */
         }
 
-        .navbar-brand img
-        {
-            height: 120px; /* Ensure logo size */
-            width: auto; /* Maintain aspect ratio */
+            .navbar-brand img.logo {
+                display: block; /* quita espacio inline */
+                width: auto;
+                height: auto;
+                max-height: 64px; /* alto máximo del logo */
+                object-fit: contain;
+            }
+            
+        
+    
+        /* Contorno alrededor de cada letra */
+        .logo-outline {
+            filter: 
+            drop-shadow(2px 4px  14px rgba(50,128,128,.50)) 
+            drop-shadow(-2px -3px 14px rgba(50,128,128,.50));
         }
 
-        .btn-accion
-        {
-            font-size: 0.9rem;
+        /* PARCHE si tu archivo todavía tiene fondo blanco 
+        .logo-multiply {
+            mix-blend-mode: multiply;
+        }*/
+
+        /* ---------- NAV SECUNDARIA (MENÚ) ---------- */
+        .navbar-secondary {
+            background-color: #fff;
+            border-bottom: 1px solid rgba(0,0,0,.075);
+        }
+
+        /* ---------- CONTENIDO ---------- */
+        main {
+            flex: 1;
+        }
+
+        /* Evita “renglón vacío” por colapso de margenes del primer hijo */
+        .content-wrapper {
+            overflow: auto;
+        }
+
+            .content-wrapper > :first-child {
+                margin-top: 0 !important;
+            }
+
+        /* Botones utilitarios */
+        .btn-accion {
+            font-size: .9rem;
             padding: 4px 8px;
             margin: 0 2px;
             border-radius: 6px;
             border: none;
-            background-color: var(--gris-boton);
+            background: #f0f0f0;
             color: #333;
-            transition: background-color 0.2s ease-in-out;
+            transition: background-color .2s;
         }
 
-        .btn-accion:hover 
-        {
-            background-color: #dee2e6;
-            cursor: pointer;
+            .btn-accion:hover {
+                background: #dee2e6;
+                cursor: pointer;
+            }
+
+        .btn-editar {
+            background: #0d6efd;
+            color: #fff;
         }
 
-        .btn-editar
-        {
-            background-color: #0d6efd;
-            color: white;
+        .btn-eliminar {
+            background: #dc3545;
+            color: #fff;
         }
 
-        .btn-eliminar
-        {
-            background-color: #dc3545;
-            color: white;
+        .btn-ver {
+            background: #20c997;
+            color: #fff;
         }
 
-        .btn-ver 
-        {
-            background-color: #20c997;
-            color: white;
-        }
-
-        .btn-sm
-        {
-            font-size: 0.8rem;
+        .btn-sm {
+            font-size: .8rem;
             padding: 2px 6px;
         }
     </style>
 </head>
 <body>
     <header>
-        <!-- Navbar superior (logo centrado) -->
-        <nav class="navbar navbar-expand-lg navbar-dark navbar-main py-3 shadow-sm">
-            <div class="container justify-content-center">
-                <a class="navbar-brand mx-auto" href="/">
-                    <img src="/images/logo-burgiplot.png">
+        <!-- Barra superior: logo centrado -->
+        <nav class="navbar navbar-logo sticky-top shadow-sm" data-bs-theme="light">
+            <div class="container">
+                <a class="navbar-brand d-inline-flex align-items-center" href="/" title="Inicio">
+                    
+                    <img src="~/images/logo-burgiplot.png" alt="Bürgiplot"
+                         class="logo logo-outline">
+                    <!-- Si tu archivo aún tiene fondo blanco, agrega también logo-multiply:
+                         class="logo logo-outline logo-multiply" -->
                 </a>
             </div>
         </nav>
 
-        <!-- Navbar secundaria (menú colapsable con íconos) -->
-        <nav class="navbar navbar-expand-lg navbar-secondary border-bottom shadow-sm sticky-top">
+        <!-- Barra secundaria: menú -->
+        <nav class="navbar navbar-expand-lg navbar-secondary sticky-top shadow-sm" data-bs-theme="light">
             <div class="container">
-                <!-- Botón hamburguesa -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSecundario"
-                        aria-controls="navbarSecundario" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSecundario" aria-controls="navbarSecundario"
+                        aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <!-- Enlaces -->
-                <div class="collapse navbar-collapse justify-content-center" id="navbarSecundario">
+                <div id="navbarSecundario" class="collapse navbar-collapse justify-content-center">
                     <ul class="navbar-nav flex-wrap justify-content-center w-100">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Clientes" asp-action="Index"><i class="bi bi-people-fill"></i> Clientes</a>
+                            <a class="nav-link text-dark" asp-controller="Clientes" asp-action="Index">
+                                <i class="bi bi-people-fill"></i> Clientes
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Ordenes" asp-action="Index"><i class="bi bi-clipboard-check"></i> Órdenes</a>
+                            <a class="nav-link text-dark" asp-controller="Ordenes" asp-action="Index">
+                                <i class="bi bi-clipboard-check"></i> Órdenes
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Facturacion" asp-action="Index"><i class="bi bi-receipt"></i> Facturación</a>
+                            <a class="nav-link text-dark" asp-controller="Facturacion" asp-action="Index">
+                                <i class="bi bi-receipt"></i> Facturación
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Materiales" asp-action="Index"><i class="bi bi-box-seam"></i> Stock de Materiales</a>
+                            <a class="nav-link text-dark" asp-controller="Materiales" asp-action="Index">
+                                <i class="bi bi-box-seam"></i> Stock de Materiales
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Usuarios" asp-action="Index"><i class="bi bi-person-circle"></i> Usuarios</a>
+                            <a class="nav-link text-dark" asp-controller="Usuarios" asp-action="Index">
+                                <i class="bi bi-person-circle"></i> Usuarios
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -139,16 +186,16 @@
 
     <main class="content-wrapper">
         <div class="text-center my-4">
-            <h2 class="fw-bold">@ViewData["Title"]</h2>
+            <h2 class="fw-bold mt-0">@ViewData["Title"]</h2> 
         </div>
         @RenderBody()
     </main>
+
     <footer class="text-center">
-        <small>&copy; @DateTime.Now.Year - Bürgiplot. Todos los derechos reservados.</small>
+        <small>&copy; @DateTime.Now.Year - L N B. Todos los derechos reservados.</small>
     </footer>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     @RenderSection("Scripts", required: false)
-
 </body>
 </html>
