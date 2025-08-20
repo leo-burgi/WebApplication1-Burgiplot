@@ -11,7 +11,7 @@ namespace WebApplication1.Data
         public DbSet<WebApplication1.Models.Cliente> Clientes { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<WebApplication1.Models.Cliente>().ToTable("Clientes");
+            modelBuilder.Entity<WebApplication1.Models.Cliente>().ToTable("Cliente");
         }
     }
 }

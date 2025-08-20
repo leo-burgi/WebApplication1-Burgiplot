@@ -9,11 +9,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<BurgiplotContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
 );
-var cs = builder.Configuration.GetConnectionString("DefaultConnection");
-if (string.IsNullOrWhiteSpace(cs))
-{
-    throw new InvalidOperationException("DefaultConnection no encontrada. Revisá appsettings(.Development).json y el nombre de la clave.");
-}
+
 
 var app = builder.Build();
 

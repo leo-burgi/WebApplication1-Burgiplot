@@ -6,7 +6,7 @@ namespace WebApplication1.Models
     {
         public BurgiplotContext(DbContextOptions<BurgiplotContext> options) : base(options) { }
 
-        public DbSet<Cliente> Clientes { get; set; } = null!;
+        public DbSet<Cliente> Cliente { get; set; } = null!;
 
     }
 

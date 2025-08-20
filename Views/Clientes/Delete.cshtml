@@ -14,7 +14,7 @@
 
             <div class="card shadow rounded-4">
                 <div class="card-body">
-                    <h5 class="mb-4 text-danger">¿Estás seguro que querés eliminar este cliente?</h5>
+                    <h5 class="mb-4 text-danger">¿Estás seguro que querés eliminar este cliente de la base de datos?</h5>
 
                     <dl class="row">
                         <dt class="col-sm-3">Nombre</dt>
@@ -30,16 +30,20 @@
                         <dd class="col-sm-9">@Model.Correo</dd>
 
                         <dt class="col-sm-3">DNI</dt>
-                        <dd class="col-sm-9">@Model.DNI</dd>
+                        <dd class="col-sm-9">@Model.Dni</dd>
                     </dl>
 
-                    <form asp-action="Delete">
+                    <form asp-controller="Clientes" asp-action="Delete" asp-route-id="@Model.Id" method="post">
+                        @Html.AntiForgeryToken()
                         <input type="hidden" asp-for="Id" />
+                        <input type="hidden" asp-for="RowVer" />
                         <div class="d-flex justify-content-between">
                             <a asp-action="Index" class="btn btn-outline-secondary">← Volver</a>
                             <input type="submit" value="Eliminar" class="btn btn-danger" />
                         </div>
                     </form>
+                    <div class="text-danger mt-3">
+                        @Html.ValidationSummary()
                 </div>
             </div>
         </div>
