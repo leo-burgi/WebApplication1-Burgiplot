@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿/*using Microsoft.EntityFrameworkCore;
 
 namespace WebApplication1.Data
 {
@@ -16,3 +16,4 @@ namespace WebApplication1.Data
     }
 }
 
+*/
