@@ -7,12 +7,13 @@
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            <div class="card shadow rounded-4">
 			<div class="hero d-flex align-items-center bg-success text-white py-2 px-3 rounded mb-3 shadow-sm">
 				<i class="bi bi-person-lines-fill fs-4 me-2"></i>
 				<h4 class="mb-0 fw-bold">Detalles del Cliente</h4>
 			</div>
 
-            <div class="card shadow rounded-4">
+            
                 <div class="card-body">
                     <h5 class="mb-4 text-dark">Detalles del cliente</h5>
                 
@@ -32,20 +33,21 @@
                         <dt class="col-sm-3">DNI</dt>
                         <dd class="col-sm-9">@Model.DNI</dd>
                     </dl>
+                    <div class="container mt-3">
+                        <div class="row justify-content-center">
+                            <div class="col-md-8 d-flex justify-content-between">
+                                <a asp-action="Index" class="btn btn-accion btn-sm">← Volver</a>
+                                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-accion btn-editar btn-sm">Editar</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="container mt-3">
-    <div class="row justify-content-center">
-        <div class="col-md-8 d-flex justify-content-between">
-            <a asp-action="Index" class="btn btn-accion btn-sm">← Volver</a>
-            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-accion btn-editar btn-sm">Editar</a>
-        </div>
-    </div>
-</div>
+
 <style>
     .hero {
         background: linear-gradient(150deg, #198754 0%, #1c3e66 40%, #198754 100%);

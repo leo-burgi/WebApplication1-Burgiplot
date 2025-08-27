@@ -7,12 +7,13 @@
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            <div class="card shadow rounded-4">
             <div class="hero d-flex align-items-center bg-success text-white py-2 px-3 rounded mb-3 shadow-sm">
                 <i class="bi bi-person-x-fill fs-4 me-2"></i>
                 <h4 class="mb-0 fw-bold">Eliminar Cliente</h4>
             </div>
 
-            <div class="card shadow rounded-4">
+            
                 <div class="card-body">
                     <h5 class="mb-4 text-danger">¿Estás seguro que querés eliminar este cliente?</h5>
 
@@ -36,10 +37,11 @@
                     <form asp-action="Delete">
                         <input type="hidden" asp-for="Id" />
                         <div class="d-flex justify-content-between">
-                            <a asp-action="Index" class="btn btn-outline-secondary">← Volver</a>
-                            <input type="submit" value="Eliminar" class="btn btn-danger" />
+                            <a asp-action="Index" class="btn btn-accion btn-sm">← Volver</a>
+                            <input type="submit" value="Eliminar" class="btn btn-danger btn-sm" />
                         </div>
                     </form>
+                    
                 </div>
             </div>
         </div>
