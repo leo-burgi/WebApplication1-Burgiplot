@@ -48,11 +48,14 @@
         <h3 class="fw-bold mb-3"> ¿Listos para empezar a optimizar?</h3>
         <p class="text-secondary mb-4">Entrá al portal público para conocer la misión, visión y valores de la empresa. <br />
             O ingresá directamente al sistema con usuario y contraseña para empezar a administrar.</p>
-        <a asp-controller="Public" asp-action="Portal" class="btn btn-success btn-lg">
-            <i class="bi bi-window me-2"></i>Portal institucional
-        </a>
-        <a asp-controller="Account" asp-action="Login" class="btn btn-outline-primary btn-lg">
-            <i class="bi bi-box-arrow-in-right me-2"></i>Sistema administrativo
-        </a>
+            <div class="d-flex flex-column flex-md-row justify-content-center">
+                <a asp-controller="Public" asp-action="Portal" class="btn btn-success btn-lg me-md-2 mb-2 mb-md-0">
+                    <i class="bi bi-window me-2"></i>Portal institucional
+                </a>
+                <a asp-controller="Account" asp-action="Login" class="btn btn-outline-primary btn-lg">
+                    <i class="bi bi-box-arrow-in-right me-2"></i>Sistema administrativo
+                </a>
+        </div>
+            
     </div>
 </section>
