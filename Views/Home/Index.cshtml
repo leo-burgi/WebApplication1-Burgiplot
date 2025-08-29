@@ -1,61 +1,76 @@
 ﻿@{
     ViewData["Title"] = "Web corporativa + sistema privado";
 }
-<section class="hero text-white py-5">
+
+<section class="hero-landing py-5">
     <div class="container">
         <div class="row align-items-center g-4">
             <div class="col-lg-7">
                 <h1 class="display-5 fw-bold mb-3">Unificá tu web y tu sistema</h1>
                 <p class="lead mb-4">
-                    <strong>Todo tu negocio</strong> en un solo dominio.<br />
-                    <strong>Portal institucional</strong> para mostrar misión, visión y valores.<br />
-                    <strong>Sistema privado</strong> para clientes, órdenes, stock y facturación.<br />
-                    Menos papeles, menos planillas. <strong>Más resultados medibles.</strong><br />
-                    <em>100% adaptable a cualquier dispositivo.</em>
+                    Portal institucional + sistema privado en un solo dominio. Órdenes, stock, facturación y KPIs.
                 </p>
-                <ul class="list-unstyled d-flex flex-column gap-3 mt-4 mb-0 ps-4">
-                    <li class="d-flex align-items-center"><i class="bi bi-shield-check me-2"></i>Datos en tu propio servidor</li>
-                    <li class="d-flex align-items-center"><i class="bi bi-phone me-2"></i>Adaptable a cualquier dispositivo</li>
-                    <li class="d-flex align-items-center"><i class="bi bi-bar-chart-line me-2"></i>KPIs para decidir mejor</li>
+                <ul class="list-unstyled d-flex flex-column gap-2 mb-4" id="beneficios">
+                    <li><i class="bi bi-shield-check me-2"></i>Datos en tu propio servidor</li>
+                    <li><i class="bi bi-phone me-2"></i>Responsive en todos los dispositivos</li>
+                    <li><i class="bi bi-bar-chart-line me-2"></i>KPIs y reportes</li>
                 </ul>
-
+                <a asp-controller="Public" asp-action="Portal" class="btn btn-light btn-lg">
+                    <i class="bi bi-window me-2"></i> Ver portal
+                </a>
             </div>
-
             <div class="col-lg-5">
-                <div class="card shadow-lg border-0 rounded-4">
-                    <div class="card-body p-4">
-                        <div class="d-flex align-items-center mb-3">
-                            <i class="bi bi-lightning-charge display-6 me-2"></i>
-                            <h5 class="mb-0">Beneficios clave</h5>
-                        </div>
-                        <ul class="list-unstyled mb-0">
-                            <li class="mb-3 d-flex"><i class="bi bi-check2-circle me-2 fs-5 text-primary"></i><span><strong>Base de datos</strong> centralizada de clientes.</span></li>
-                            <li class="mb-3 d-flex"><i class="bi bi-check2-circle me-2 fs-5 text-primary"></i><span><strong>Órdenes</strong> con estados, responsables y plazos.</span></li>
-                            <li class="mb-3 d-flex"><i class="bi bi-check2-circle me-2 fs-5 text-primary"></i><span><strong>Stock</strong> con alertas de mínimos.</span></li>
-                            <li class="mb-3 d-flex"><i class="bi bi-check2-circle me-2 fs-5 text-primary"></i><span><strong>Facturación</strong> con archivos listos para tu sistema.*</span></li>
-                            <li class="mb-1 d-flex"><i class="bi bi-check2-circle me-2 fs-5 text-primary"></i><span><strong>KPIs</strong> de ingresos, materiales y productividad.</span></li>
-                        </ul>
-                        <p class="small text-muted mt-3 mb-0 ps-4">*Integrable con ARCA (costo adicional).</p>
-                    </div>
-                </div>
+                <div class="ratio ratio-16x9 bg-white rounded-4 shadow-sm"></div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="py-5 bg-body-tertiary">
-    <div class="container text-center">
-        <h3 class="fw-bold mb-3"> ¿Listos para empezar a optimizar?</h3>
-        <p class="text-secondary mb-4">Entrá al portal público para conocer la misión, visión y valores de la empresa. <br />
-            O ingresá directamente al sistema con usuario y contraseña para empezar a administrar.</p>
-            <div class="d-flex flex-column flex-md-row justify-content-center">
-                <a asp-controller="Public" asp-action="Portal" class="btn btn-success btn-lg me-md-2 mb-2 mb-md-0">
-                    <i class="bi bi-window me-2"></i>Portal institucional
-                </a>
-                <a asp-controller="Account" asp-action="Login" class="btn btn-outline-primary btn-lg">
-                    <i class="bi bi-box-arrow-in-right me-2"></i>Sistema administrativo
-                </a>
+<section id="demo" class="py-5">
+    <div class="container">
+        <h2 class="fw-bold mb-3 text-center">Demo</h2>
+        <p class="text-secondary text-center mb-4">Mirá cómo luce el panel y las secciones clave.</p>
+        <div class="row row-cols-1 row-cols-md-3 g-3">
+            <div class="col"><img src="~/images/demo1.jpg" class="img-cover" alt="Demo 1"></div>
+            <div class="col"><img src="~/images/demo2.jpg" class="img-cover" alt="Demo 2"></div>
+            <div class="col"><img src="~/images/demo3.jpg" class="img-cover" alt="Demo 3"></div>
         </div>
-            
+        <div class="text-center mt-4">
+            <a asp-controller="Public" asp-action="Portal" class="btn btn-success btn-lg">
+                Ir al portal
+            </a>
+        </div>
+    </div>
+</section>
+
+<section id="contratacion" class="bg-body-tertiary py-5">
+    <div class="container">
+        <h2 class="fw-bold mb-3 text-center">Formas de contratación y pago</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-3">
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Plan Inicial</h5>
+                        <p>Setup + hosting básico. Soporte por email.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Plan PyME</h5>
+                        <p>Incluye KPIs y prioridades de soporte.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">A medida</h5>
+                        <p>Flujos y reportes personalizados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
