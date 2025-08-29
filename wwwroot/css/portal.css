@@ -1,0 +1,13 @@
+/* Solo portal */
+.hero-portal {
+    background: linear-gradient(150deg,#198754 0%,#1c3e66 40%,#198754 100%);
+    color: #fff
+}
+
+.nav-secondary .nav-link {
+    color: #212529
+}
+
+.nav-secondary .btn-ingresar {
+    margin-left: auto
+}
