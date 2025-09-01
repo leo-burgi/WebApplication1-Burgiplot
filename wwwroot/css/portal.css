@@ -1,13 +1,37 @@
 /* Solo portal */
 .hero-portal {
-    background: linear-gradient(150deg,#198754 0%,#1c3e66 40%,#198754 100%);
+    background: linear-gradient(90deg,#198754 0%,#1c3e66 40%,#1c3e66 100%);
     color: #fff
 }
 
-.nav-secondary .nav-link {
-    color: #212529
+header {
+    position: relative;
+    z-index: 1030
+}
+.navbar-logo {
+    background-color: var(--bs-body-bg);
+    box-shadow: none !important;
+    z-index: 1031;
+}
+.navbar-secondary {
+    top: 86px; 
+    z-index: 1030; 
 }
 
-.nav-secondary .btn-ingresar {
-    margin-left: auto
+.bg-sutil {
+    background: linear-gradient(90deg, #808080 0%, #fff 100%);
+}
+
+body {
+    padding-top: 120px;
+}
+
+.img-cover {
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px 8px;
 }

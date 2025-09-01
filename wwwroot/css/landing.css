@@ -1,5 +1,49 @@
 /* Solo landing */
 .hero-landing {
-    background: linear-gradient(150deg,#198754 0%,#1c3e66 40%,#198754 100%);
-    color: #fff
+    background: linear-gradient(120deg,#198754 0%,#1c3e66 40%,#198754 100%);
+    color: #d2e1d1
 }
+header {
+    position: relative;
+    z-index: 1030
+}
+
+.navbar-logo {
+    background-color: var(--bs-body-bg);
+    box-shadow: none !important;
+}
+.navbar-secondary {
+    top: 40px;
+    z-index: 1030;
+}
+
+body {
+    padding-top: 100px; 
+}
+.img-cover {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 96%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 12px 12px;
+    box-shadow: 10px 10px 10px rgba(0,0,0, 0.6);
+}
+
+.btn-gradient {
+    background-image: linear-gradient(to right, var(--primary-blue), var(--primary-green));
+    border: none;
+    color: var(--text-light);
+    padding: 12px 30px;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .btn-gradient:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        color: var(--text-light);
+    }
+.img-fluid{}

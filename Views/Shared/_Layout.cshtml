@@ -15,10 +15,9 @@
 
 <body>
     <header>
-        <!-- Barra superior: logo centrado -->
         <nav class="navbar navbar-logo sticky-top shadow-sm" data-bs-theme="light">
             <div class="container">
-                <a class="navbar-brand d-inline-flex align-items-center" href="/" title="Inicio">
+                <a class="navbar-brand d-inline-flex align-items-center" href="/Public/Portal" title="Portal">
                     <img src="~/images/logo-burgiplot.png" alt="Bürgiplot"
                          class="logo logo-outline">
                 </a>
@@ -46,15 +45,16 @@
                                 <i class="bi bi-clipboard-check"></i> Órdenes
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Facturacion" asp-action="Index">
-                                <i class="bi bi-receipt"></i> Facturación
-                            </a>
-                        </li>
+  
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-controller="Materiales" asp-action="Index">
                                 <i class="bi bi-box-seam"></i> Stock
                             </a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link text-dark" asp-controller="Facturacion" asp-action="Index">
+                            <i class="bi bi-receipt"></i> Facturación
+                        </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-controller="Usuarios" asp-action="Index">

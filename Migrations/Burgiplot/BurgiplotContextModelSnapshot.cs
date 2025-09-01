@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebApplication1.Data;
 
 
+
 #nullable disable
 
 namespace WebApplication1.Migrations.Burgiplot
