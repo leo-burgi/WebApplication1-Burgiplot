@@ -41,9 +41,9 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-    .btn-gradient:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        color: var(--text-light);
-    }
+.btn-gradient:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    color: var(--text-light);
+}
 .img-fluid{}
