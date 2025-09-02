@@ -17,7 +17,7 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-logo bg-white fixed-top shadow-sm">
+        <nav class="navbar navbar-logo bg-white fixed-top">
             <div class="container">
                 <a class="navbar-brand d-inline-flex align-items-center" href="/" title="Inicio">
                     <img src="~/images/logo-burgiplot.png" alt="Bürgiplot"
@@ -25,13 +25,13 @@
                 </a>
             </div>
         </nav>
-        <nav class="navbar navbar-secondary navbar-expand-lg bg-white fixed-top">
-            <div class="d-flex justify-content-md-start container">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navPortal">
+        <nav class="navbar navbar-secondary navbar-expand-lg fixed-top">
+            <div class="d-flex justify-content-between container">
+                <button class="navbar-toggler glass " type="button" data-bs-toggle="collapse" data-bs-target="#navPortal">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div id="navPortal" class="collapse navbar-collapse">
+                <div id="navPortal" class="collapse navbar-collapse ">
                     <ul class="navbar-nav flex-wrap justify-content-center pe-lg-4">
                         <li class="nav-item"><a class="nav-link" href="#mision">Misión</a></li>
                         <li class="nav-item"><a class="nav-link" href="#vision">Visión</a></li>
@@ -41,10 +41,16 @@
                     </ul>
 
                 </div>
-                <a href="#portal-top" </a>
-                <a asp-controller="Clientes" asp-action="Index" class="btn btn-success btn-ingresar order-md-2">
-                    <i class="bi bi-box-arrow-in-right me-1"></i> Ingresar
-                </a>
+                <div>
+                    <a href="#portal-top" </a>
+                    <a asp-controller="Clientes" asp-action="Index" class="btn btn-outline-success btn-gradient glass">
+                        <i class="bi bi-box-arrow-in-right me-1"></i> Ingresar
+                    </a>
+                    <a asp-controller="Home" asp-action="Index" class="btn btn-outline-danger btn-gradient glass">
+                        <i class="bi bi-box-arrow-left me-1"></i> Salir
+                    </a>
+                </div>
+                
             </div>
         </nav>
         
