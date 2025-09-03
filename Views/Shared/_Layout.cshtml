@@ -17,7 +17,7 @@
     <header>
         <nav class="navbar navbar-logo sticky-top shadow-sm" data-bs-theme="light">
             <div class="container">
-                <a class="navbar-brand d-inline-flex align-items-center" href="/Public/Portal" title="Portal">
+                <a class="navbar-brand d-inline-flex align-items-center" href="/Clientes" title="Inicio">
                     <img src="~/images/logo-burgiplot.png" alt="Bürgiplot"
                          class="logo logo-outline">
                 </a>
@@ -26,8 +26,8 @@
 
         <!-- Barra secundaria: menú -->
         <nav class="navbar navbar-expand-lg navbar-secondary sticky-top shadow-sm" data-bs-theme="light">
-            <div class="container">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            <div class="d-flex justify-content-between container">
+                <button class="navbar-toggler glass" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSecundario" aria-controls="navbarSecundario"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -63,6 +63,9 @@
                         </li>
                     </ul>
                 </div>
+                <a asp-controller="Public" asp-action="Portal" class="btn btn-outline-danger btn-gradient glass">
+                    <i class="bi bi-box-arrow-left me-1"></i> Salir
+                </a>
             </div>
         </nav>
     </header>

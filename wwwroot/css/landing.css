@@ -20,7 +20,15 @@ header {
     top: 40px;
     z-index: 1030;
 }
-
+.icon-hero {
+    font-size: clamp(2rem, 10vw, 10rem);
+    line-height:1;
+}
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 28px;
+}
 body {
     padding-top: 100px; 
 }
@@ -35,11 +43,11 @@ body {
     border-radius: 12px 12px;
     box-shadow: 10px 10px 10px rgba(0,0,0, 0.6);
 }
-    .img-cover:hover {
-        transform: translateY(-2px) scale(2.5);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
-        color: var(--text-light);
-    }
+.img-cover:hover {
+    transform: translateY(-2px) scale(2.5);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+    color: var(--text-light);
+}
 
 .btn-gradient {
     border: none;
@@ -67,6 +75,6 @@ body {
     box-shadow: 0 10px 20px rgba(0,0,0,.12);
 }
 .card:hover {
-    background: rgb(177, 137, 105);
+    background: #129f3c9b;
     box-shadow: 0 10px 20px rgba(0,0,0,.12);
 }
