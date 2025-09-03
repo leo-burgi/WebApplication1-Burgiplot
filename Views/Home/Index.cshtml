@@ -1,76 +1,135 @@
 ﻿@{
-    ViewData["Title"] = "Web corporativa + sistema privado";
+    ViewData["Title"] = "LNB Software - Soluciones para Pymes";
 }
 
-<section class="hero-landing py-5">
-    <div class="container">
-        <div class="row align-items-center g-4">
-            <div class="col-lg-7">
-                <h1 class="display-5 fw-bold mb-3">Unificá tu web y tu sistema</h1>
-                <p class="lead mb-4">
-                    Portal institucional + sistema privado en un solo dominio. Órdenes, stock, facturación y KPIs.
-                </p>
-                <ul class="list-unstyled d-flex flex-column gap-2 mb-4" id="beneficios">
-                    <li><i class="bi bi-shield-check me-2"></i>Datos en tu propio servidor</li>
-                    <li><i class="bi bi-phone me-2"></i>Responsive en todos los dispositivos</li>
-                    <li><i class="bi bi-bar-chart-line me-2"></i>KPIs y reportes</li>
-                </ul>
-                <a asp-controller="Public" asp-action="Portal" class="btn btn-light btn-lg">
-                    <i class="bi bi-window me-2"></i> Ver portal
-                </a>
+<section class="hero-landing ">
+    <div class="container py-md-2">
+        <div class="row align-items-stretch g-4">
+            <div class="col-12 col-lg-9 text-center text-lg-start">
+                <div class="h-100 d-flex flex-column justify-content-center">
+                    <h1 class="display-5 fw-bold mb-3">Software Intuitivo para <span>Pymes</span></h1>
+                    <p class="lead mb-4">
+                        Optimiza procesos, aumenta la productividad y toma decisiones inteligentes.<br />
+                        <strong><h3> Conectá tu negocio al futuro.</h3></strong>
+                    </p>
+                    <div class="text-center mt-4 text-lg-start">
+                        <a href="#contratacion" class="btn btn-gradient glass btn-lg">
+                            Descubre Nuestros Planes
+                        </a>
+                    </div>
+                </div>
+               
             </div>
-            <div class="col-lg-5">
-                <div class="ratio ratio-16x9 bg-white rounded-4 shadow-sm"></div>
+            <div class="col-12 col-lg-3 pb-2">
+                <div class="h-150 d-flex flex-column align-items-center justify-content-center py-md-5">
+                    <div class="icon-grid">
+                        <i class="bi bi-cpu icon-hero" aria-hidden="true"></i>
+                        <i class="bi bi-rocket-takeoff icon-hero" aria-hidden="true"></i>
+                        <i class="bi bi-code-slash icon-hero" aria-hidden="true"></i>
+                        <i class="bi bi-diagram-3 icon-hero" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+    
+</section>
+
+<section id="beneficios" class=" py-5">
+    <div class="container-xxl">
+        <h2 class="section-title text-center">Una solución, múltiples beneficios</h2>
+        <div class="text-center py-4 row g-4 row-cols-1 row-cols-sm-2 row-cols-lg-6">
+            <div class="col-md-3">
+                <i class="bi bi-database-fill-check display-4 text-primary"></i>
+                <h5 class="fw-bold mt-3">Centraliza y Asegura</h5>
+                <p>Toda la información de tus clientes en un solo lugar y en tu propio servidor.</p>
+            </div>
+            <div class="col-md-3">
+                <i class="bi bi-calendar2-week display-4 text-primary"></i>
+                <h5 class="fw-bold mt-3">Prioriza los trabajos</h5>
+                <p>Organiza tus ordendes de trabajo según el estado, 100% configurable según el rubro laboral.</p>
+            </div>
+            <div class="col-md-3">
+                <i class="bi bi-phone display-4 text-primary"></i>
+                <h5 class="fw-bold mt-3">Acceso Total</h5>
+                <p>Responsivo y adaptable para que gestiones tu negocio desde cualquier dispositivo.</p>
+            </div>
+            <div class="col-md-3">
+                <i class="bi bi-stars display-4 text-primary"></i>
+                <h5 class="fw-bold mt-3">Facturación automatizada</h5>
+                <p>Generación de facturas con un click. Automatiza procesos y dedica tiempo a hacer crecer tu negocio.</p>
+            </div>
+                <div class="col-md-3">
+                <i class="bi bi-kanban display-4 text-primary"></i>
+                <h5 class="fw-bold mt-3">Control de Stock</h5>
+                <p>Descuento automático de materiales al aceptar un trabajo y avisos de stock bajo. Nunca más vas a tener faltante.</p>
+            </div>
+            <div class="col-md-3">
+                <i class="bi bi-bar-chart-line display-4 text-primary"></i>
+                <h5 class="fw-bold mt-3">Decisiones Inteligentes</h5>
+                <p>KPIs y reportes claros para proyectar avances sólidos y tomar mejores decisiones.</p>
             </div>
         </div>
     </div>
 </section>
-
-<section id="demo" class="py-5">
+     
+<section id="contratacion" class="py-2">
     <div class="container">
-        <h2 class="fw-bold mb-3 text-center">Demo</h2>
-        <p class="text-secondary text-center mb-4">Mirá cómo luce el panel y las secciones clave.</p>
+        <h2 class="section-title text-center">Contratación</h2>
+        <p class="lead text-center mb-4">Tenemos un plan ideal, a la medida de tu empresa.</p>
+        <div class="container text-center py-4"> 
+            <a href="https://wa.me/5493492528528" class="btn btn-gradient btn-outline-success glass btn-lg ">
+                <i class="bi bi-whatsapp me-1"></i> Contratá tu Web + Sistema
+            </a>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card h-100 text-center p-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Plan Inicial</h5>
+                        <p class="card-text">Ideal para arrancar. Setup + hosting básico. Soporte por email.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 text-center p-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Plan PyME</h5>
+                        <p class="card-text">La solución completa. Incluye KPIs y prioridades de soporte.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 text-center p-3">
+                    <div class="card-body">
+                        <h5 class="card-title">A Medida</h5>
+                        <p class="card-text">Para necesidades específicas. Flujos y reportes personalizados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<section id="demo" class="hero-resto text-black py-5">
+    <div class="container">
+        <h2 class="section-title text-center">Demo</h2>
+        <p class="lead text-center mb-4">Mirá cómo luce el portal institucional y las secciones claves del sistema administrativo.</p>
         <div class="row row-cols-1 row-cols-md-3 g-3">
             <div class="col"><img src="~/images/demo1.jpg" class="img-cover" alt="Demo 1"></div>
             <div class="col"><img src="~/images/demo2.jpg" class="img-cover" alt="Demo 2"></div>
             <div class="col"><img src="~/images/demo3.jpg" class="img-cover" alt="Demo 3"></div>
         </div>
         <div class="text-center mt-4">
-            <a asp-controller="Public" asp-action="Portal" class="btn btn-success btn-lg">
-                Ir al portal
+            <a asp-controller="Public" asp-action="Portal" class="btn btn-gradient glass btn-lg">
+                <i class="bi bi-window me-2"></i> Ver portal Bürgiplot
             </a>
         </div>
     </div>
 </section>
 
-<section id="contratacion" class="bg-body-tertiary py-5">
-    <div class="container">
-        <h2 class="fw-bold mb-3 text-center">Formas de contratación y pago</h2>
-        <div class="row row-cols-1 row-cols-md-3 g-3">
-            <div class="col">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title">Plan Inicial</h5>
-                        <p>Setup + hosting básico. Soporte por email.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title">Plan PyME</h5>
-                        <p>Incluye KPIs y prioridades de soporte.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title">A medida</h5>
-                        <p>Flujos y reportes personalizados.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+
