@@ -1,24 +1,27 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+using System.Collections.Generic;
 
-namespace WebApplication1.Models
+namespace WebApplication1.Models;
+
+public partial class Cliente
 {
-    [Table("Cliente")]
-    public class Cliente
-    {
-        [Key]
-        public int Id { get; set; }
-        
-        [Required(ErrorMessage = "El campo Nombre es obligatorio.")]
-        public string Nombre { get; set; }
-        public string Dirección { get; set; }
-        
-        [Required(ErrorMessage = "El campo Teléfono es obligatorio.")]
-        public string Telefono { get; set; }
-        public string Correo { get; set; }
-        
-        [Required(ErrorMessage = "El campo DNI de Registro es obligatorio.")]
-        public string DNI { get; set; }
-    }
+    public int Id { get; set; }
+
+    public string Nombre { get; set; } = null!;
+
+    public string? Dirección { get; set; }
+
+    public string? Telefono { get; set; }
+
+    public string? Correo { get; set; }
+
+    public string? CuitCuil { get; set; }
+
+    public DateTime CreatedAtUtc { get; set; }
+
+    public DateTime UpdateAtUtc { get; set; }
+
+    public byte[] RowVer { get; set; } = null!;
+
+    public virtual ICollection<Orden> Ordens { get; set; } = new List<Orden>();
 }
