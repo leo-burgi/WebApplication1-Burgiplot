@@ -1,16 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace WebApplication1.Models;
 
 public partial class Orden
 {
     public int Id { get; set; }
-
+    
+    [Display(Name = "Cliente")]
     public int ClienteId { get; set; }
-
+   
+    [Display(Name = "Fecha")]
     public DateTime FechaUtc { get; set; }
 
+    [Required, Display(Name = "Estado actual")]
     public string Estado { get; set; } = null!;
 
     public string? Observaciones { get; set; }
@@ -21,6 +25,7 @@ public partial class Orden
 
     public byte[] RowVer { get; set; } = null!;
 
+    [DataType(DataType.Currency)]
     public decimal Total { get; set; }
 
     public virtual Cliente Cliente { get; set; } = null!;

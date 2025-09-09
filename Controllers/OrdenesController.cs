@@ -46,15 +46,20 @@ namespace WebApplication1.Controllers
         }
 
         // GET: Ordenes/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
-            ViewData["ClienteId"] = new SelectList(_context.Clientes, "Id", "Id");
+            var clientes = await _context.Clientes.OrderBy(c => c.Nombre)
+        .Select(c => new
+        {
+            c.Id,
+            Texto = c.CuitCuil != null ? $"{c.Id} — {c.Nombre}" : c.Nombre
+        }).ToListAsync();
+            ViewData["ClienteId"] = new SelectList(clientes, "Id", "Texto");
+
             return View();
         }
 
         // POST: Ordenes/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,ClienteId,FechaUtc,Estado,Observaciones,CreatedAtUtc,UpdatedAtUtc,RowVer,Total")] Orden orden)
@@ -72,17 +77,18 @@ namespace WebApplication1.Controllers
         // GET: Ordenes/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
             var orden = await _context.Ordens.FindAsync(id);
             if (orden == null)
             {
                 return NotFound();
             }
-            ViewData["ClienteId"] = new SelectList(_context.Clientes, "Id", "Id", orden.ClienteId);
+            var clientes = await _context.Clientes.OrderBy(c => c.Nombre).Select(c => new
+            {
+                c.Id,
+                Texto = c.CuitCuil != null ? $"{c.Nombre} — {c.CuitCuil}" : c.Nombre
+            }).ToListAsync();
+            ViewData["ClienteId"] = new SelectList(clientes, "Id", "Texto", orden.ClienteId);
+
             return View(orden);
         }
 
