@@ -7,14 +7,14 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 
 
-builder.Services.AddDbContext<BurgiplotContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
-);
-var cs = builder.Configuration.GetConnectionString("DefaultConnection");
-if (string.IsNullOrWhiteSpace(cs))
-{
-    throw new InvalidOperationException("DefaultConnection no encontrada. Revisá appsettings(.Development).json y el nombre de la clave.");
-}
+Console.WriteLine("DB => " + builder.Configuration.GetConnectionString("DefaultConnection"));
+
+builder.Services.AddDbContext<BurgiplotContext>(opts =>
+    opts.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+        .EnableDetailedErrors()
+        .EnableSensitiveDataLogging()
+        .LogTo(Console.WriteLine, LogLevel.Information));
+
 
 var app = builder.Build();
 

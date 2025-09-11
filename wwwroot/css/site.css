@@ -9,19 +9,21 @@ body {
 }
 
 
-/* NAV superior y logo */
+
+
+.navbar-logo .container {
+    justify-content: center
+}
+
 header {
     position: relative;
     z-index: 1030
 }
 
 .navbar-logo {
-    background-color: var(--bs-body-bg);
+    background-color: #1c3e66;
     box-shadow: none !important;
-}
-
-.navbar-logo .container {
-    justify-content: center
+    z-index: 1031;
 }
 
 .navbar-brand {
@@ -30,25 +32,26 @@ header {
     isolation: isolate
 }
 
-.navbar-brand img.logo {
-    display: block;
-    width: auto;
-    height: auto;
-    max-height: 64px;
-    object-fit: contain
-}
+    .navbar-brand img.logo {
+        display: block;
+        width: auto;
+        height: auto;
+        max-height: 64px;
+        object-fit: contain
+    }
 
 .logo-outline {
-    filter: drop-shadow(2px 2px 8px rgba(50,128,128,.5)) drop-shadow(-2px -2px 10px rgba(50,128,128,.5))
+    filter: drop-shadow(-4px -4px 10px rgba(255,255,255)) drop-shadow(5px 5px 10px rgba(255,255,255))
 }
 
-/* NAV secundaria */
 .navbar-secondary {
-    background: #fff;
-    border-bottom: 1px solid rgba(0,0,0,.075);
-    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    background-color: #1c3e66;
+    top: 86px;
+    z-index: 1030;
 }
-
+.navbar-secondary:hover{
+    color:aquamarine
+}
 
 
 /* Contenido */
@@ -100,30 +103,18 @@ main {
     font-size: .8rem;
     padding: 2px 6px
 }
-
-/* Tarjetas y helpers 
-.feature-card {
-    background-color: lightgray;
-    transition: transform .2s,box-shadow .2s
+.btn:hover{
+    transform: translateY(2px)
 }
 
-.feature-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 .75rem 1.5rem rgba(0,0,0,.1)
-}
-
-.panel-KPIs {
-    width: 100%;
-    height: auto;
-    object-fit: cover
-}
-
-.espacio-reporte {
-    border-radius: 4rem;
-    overflow: hidden;
-    background-size: 16px 16px
-}*/
 
 .hero {
     background: linear-gradient(150deg, #198754 0%, #1c3e66 40%, #198754 100%);
+}
+.glass {
+    backdrop-filter: blur(8px);
+    background: rgba(255,255,255,.06);
+    border: 1px #ffffff1a;
+    border-radius: 16px;
+    box-shadow: 5px 10px 20px rgba(0,0,0,.12);
 }

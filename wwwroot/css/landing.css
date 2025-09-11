@@ -3,6 +3,10 @@
     background: linear-gradient(120deg,#198754 0%,#1c3e66 40%,#198754 100%);
     color: #d2e1d1
 }
+.hero-resto {
+    background: linear-gradient(180deg,#ffffff 0%,#aa9348cb 30%,#8d815ebf 100%);
+    color: rgb(0, 0, 0)
+}
 header {
     position: relative;
     z-index: 1030
@@ -30,6 +34,9 @@ body {
     border-radius: 12px 12px;
     box-shadow: 10px 10px 10px rgba(0,0,0, 0.6);
 }
+    .img-cover:hover {
+        transform:translate(-2px) scale(1.5);
+    }
 
 .btn-gradient {
     background-image: linear-gradient(to right, var(--primary-blue), var(--primary-green));
@@ -46,4 +53,22 @@ body {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     color: var(--text-light);
 }
-.img-fluid{}
+.glass {
+    backdrop-filter: blur(8px);
+    background: rgba(255,255,255,.06);
+    border: 1px  #ffffff1a;
+    border-radius: 16px;
+    box-shadow: 5px 10px 20px rgba(0,0,0,.12);
+    
+}
+.card {
+    border-radius: 16px;
+    background: #ded9caa6;
+    box-shadow: 0 10px 20px rgba(0,0,0,.12);
+}
+
+    .card:hover {
+        transform: translateY(2px);
+        background: rgba(255,255,255, .9);
+        box-shadow: 0 10px 20px rgba(0,0,0,.12);
+    }

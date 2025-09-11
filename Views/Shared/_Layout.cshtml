@@ -26,43 +26,47 @@
 
         <!-- Barra secundaria: menú -->
         <nav class="navbar navbar-expand-lg navbar-secondary sticky-top shadow-sm" data-bs-theme="light">
-            <div class="container">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            <div class="container align ">
+                <button class="navbar-toggler glass " type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSecundario" aria-controls="navbarSecundario"
                         aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon "></span>
                 </button>
 
-                <div id="navbarSecundario" class="collapse navbar-collapse justify-content-center">
+                <div id="navbarSecundario" class="collapse  navbar-collapse justify-content-center">
                     <ul class="navbar-nav flex-wrap justify-content-center w-100">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Clientes" asp-action="Index">
+                        <li class="nav-item btn ">
+                            <a class="nav-link text-light" asp-controller="Clientes" asp-action="Index">
                                 <i class="bi bi-people-fill"></i> Clientes
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Ordenes" asp-action="Index">
+                        <li class="nav-item btn ">
+                            <a class="nav-link text-light" asp-controller="Ordenes" asp-action="Index">
                                 <i class="bi bi-clipboard-check"></i> Órdenes
                             </a>
                         </li>
   
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Materiales" asp-action="Index">
+                        <li class="nav-item btn ">
+                            <a class="nav-link text-light" asp-controller="Materiales" asp-action="Index">
                                 <i class="bi bi-box-seam"></i> Stock
                             </a>
                         </li>
-                        <li class="nav-item">
-                        <a class="nav-link text-dark" asp-controller="Facturacion" asp-action="Index">
+                        <li class="nav-item btn ">
+                            <a class="nav-link text-light" asp-controller="Facturacion" asp-action="Index">
                             <i class="bi bi-receipt"></i> Facturación
                         </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Usuarios" asp-action="Index">
+                        <li class="nav-item btn">
+                            <a class="nav-link text-light" asp-controller="Usuarios" asp-action="Index">
                                 <i class="bi bi-person-circle"></i> Usuarios
                             </a>
                         </li>
                     </ul>
+                    
                 </div>
+                <a asp-controller="Public" asp-action="Portal" class="btn glass btn-danger btn-ingresar order-md-2">
+                    <i class="bi bi-box-arrow-in-right me-1"></i> Salir
+                </a>
             </div>
         </nav>
     </header>
