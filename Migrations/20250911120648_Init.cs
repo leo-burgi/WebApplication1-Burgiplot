@@ -2,10 +2,10 @@
 
 #nullable disable
 
-namespace WebApplication1.Migrations.Burgiplot
+namespace WebApplication1.Migrations
 {
     /// <inheritdoc />
-    public partial class InitBurgiplot : Migration
+    public partial class Init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -14,7 +14,7 @@ namespace WebApplication1.Migrations.Burgiplot
                 name: "Cliente",
                 columns: table => new
                 {
-                    IDCliente = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Dirección = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -24,7 +24,7 @@ namespace WebApplication1.Migrations.Burgiplot
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Cliente", x => x.IDCliente);
+                    table.PrimaryKey("PK_Cliente", x => x.Id);
                 });
         }
 

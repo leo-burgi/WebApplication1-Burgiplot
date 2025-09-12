@@ -6,15 +6,13 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebApplication1.Data;
 
-
-
 #nullable disable
 
-namespace WebApplication1.Migrations.Burgiplot
+namespace WebApplication1.Migrations
 {
     [DbContext(typeof(BurgiplotContext))]
-    [Migration("20250818224026_InitBurgiplot")]
-    partial class InitBurgiplot
+    [Migration("20250911120648_Init")]
+    partial class Init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,11 +26,11 @@ namespace WebApplication1.Migrations.Burgiplot
 
             modelBuilder.Entity("WebApplication1.Models.Cliente", b =>
                 {
-                    b.Property<int>("IDCliente")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IDCliente"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Correo")
                         .IsRequired()
@@ -54,7 +52,7 @@ namespace WebApplication1.Migrations.Burgiplot
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("IDCliente");
+                    b.HasKey("Id");
 
                     b.ToTable("Cliente");
                 });

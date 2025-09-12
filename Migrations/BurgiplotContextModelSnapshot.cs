@@ -5,11 +5,9 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebApplication1.Data;
 
-
-
 #nullable disable
 
-namespace WebApplication1.Migrations.Burgiplot
+namespace WebApplication1.Migrations
 {
     [DbContext(typeof(BurgiplotContext))]
     partial class BurgiplotContextModelSnapshot : ModelSnapshot
@@ -25,11 +23,11 @@ namespace WebApplication1.Migrations.Burgiplot
 
             modelBuilder.Entity("WebApplication1.Models.Cliente", b =>
                 {
-                    b.Property<int>("IDCliente")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IDCliente"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Correo")
                         .IsRequired()
@@ -51,7 +49,7 @@ namespace WebApplication1.Migrations.Burgiplot
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("IDCliente");
+                    b.HasKey("Id");
 
                     b.ToTable("Cliente");
                 });
