@@ -1,8 +1,22 @@
 ﻿@{
-    ViewData["Title"] = "En desarrollo";
+    ViewData["Title"] = "";
 }
 <div class="container py-5 text-center">
-    <h3 class="mb-3">🚧 Funcionalidad en desarrollo</h3>
-    <p class="text-muted">Esta sección estará disponible en una próxima versión.</p>
-    <a asp-controller="Clientes" asp-action="Index" class="btn btn-secondary btn-sm mt-3">Volver</a>
+    <div class="nav-item">
+        <i class="bi bi-gem display-3 text-primary mb-3"></i> 
+        <h4 class="mb-3">¡Desbloquea funciones avanzadas!</h4>
+        <p class="lead mb-2">Tu sistema a la medida de tus necesidades y las de tu empresa</p>
+
+    </div>
+
+
+    <a href="/Home/Index" class="btn btn-primary glass mt-3">Ver planes y precios</a>
+    <a asp-controller="Clientes" asp-action="Index" class="btn btn-secondary glass mt-3">Volver a Clientes</a>
+
+
+
+
+    <p class="text-muted mb-4">Mejora tu plan para gestionar los pedidos que realizan tus clientes, registrar los movimientos de materiales y generar facturas automáticamente. Todo esto sin perder el control de acccesos y usuarios.</p>
+
+
 </div>
