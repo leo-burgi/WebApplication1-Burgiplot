@@ -8,9 +8,6 @@ body {
     flex-direction: column
 }
 
-
-
-
 .navbar-logo .container {
     justify-content: center
 }
@@ -32,13 +29,13 @@ header {
     isolation: isolate
 }
 
-    .navbar-brand img.logo {
-        display: block;
-        width: auto;
-        height: auto;
-        max-height: 64px;
-        object-fit: contain
-    }
+.navbar-brand img.logo {
+    display: block;
+    width: auto;
+    height: auto;
+    max-height: 64px;
+    object-fit: contain
+}
 
 .logo-outline {
     filter: drop-shadow(-4px -4px 10px rgba(255,255,255)) drop-shadow(5px 5px 10px rgba(255,255,255))
@@ -49,12 +46,15 @@ header {
     top: 86px;
     z-index: 1030;
 }
-.navbar-secondary:hover{
-    color:aquamarine
-}
+    .navbar-secondary .nav-link {
+        color: #ffff
+    }
 
+        .navbar-secondary .nav-link:hover {
+            color: aquamarine;
+            transform: translateY(2px)
+        } 
 
-/* Contenido */
 main {
     flex: 1
 }
@@ -106,7 +106,6 @@ main {
 .btn:hover{
     transform: translateY(2px)
 }
-
 
 .hero {
     background: linear-gradient(150deg, #198754 0%, #1c3e66 40%, #198754 100%);

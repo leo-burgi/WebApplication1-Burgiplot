@@ -17,7 +17,7 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-logo fixed-top shadow-sm">
+        <nav class="navbar navbar-logo fixed-top shadow-sm" data-bs-theme="light">
             <div class="container">
                 <a class="navbar-brand d-inline-flex align-items-center"  title="Inicio">
                     <img src="~/images/logo-burgiplot.png" alt="Bürgiplot"
@@ -25,25 +25,33 @@
                 </a>
             </div>
         </nav>
-        <nav class="navbar navbar-secondary navbar-expand-lg fixed-top ">
-            <div class="d-flex justify-content-between container">
-                <button class="navbar-toggler glass" type="button" data-bs-toggle="collapse" data-bs-target="#navPortal">
+        <nav class="navbar navbar-secondary navbar-expand-lg fixed-top" data-bs-theme="light">
+            <div class="container align">
+                <button class="navbar-toggler glass" type="button" data-bs-toggle="collapse" data-bs-target="#navPortal" aria-controls="navbarSecundario">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                
-
-                    <div id="navPortal" class="collapse navbar-collapse ">
-                        <ul class="navbar-nav flex-wrap justify-content-center pe-lg-4">
-                            <li class="nav-item"><a class="nav-link" href="#mision">Misión</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#vision">Visión</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#valores">Valores</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#objetivos">Objetivos</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#TrabajosRealizados">Trabajos realizados</a></li>
-                        </ul>
-                        
-                    </div>
-                    
-               
+            
+            
+                <div id="navPortal" class="collapse navbar-collapse justify-content-center">
+                    <ul class="navbar-nav flex-wrap justify-content-center ">
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#mision"><i class="bi bi-send-fill mx-2"></i>Misión</a>
+                            
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#vision"><i class="bi bi-binoculars-fill mx-2"></i>Visión</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#valores"><i class="bi bi-heart-fill mx-2"></i>Valores</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#objetivos"><i class="bi bi-graph-up-arrow mx-2"></i>Objetivos</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#TrabajosRealizados"><i class="bi bi-camera-fill mx-2"></i>Trabajos realizados</a>
+                        </li>
+                    </ul>     
+                </div>
                 <div>
                     <a href="#portal-top"></a>
 
@@ -55,6 +63,7 @@
                     </a>
                 </div>
             </div>
+           
         </nav>
         
     </header>
