@@ -1,14 +1,25 @@
+
 /* Solo portal */
 .hero-portal {
     background: linear-gradient(90deg,#1c3e66bf 0%,#1c3e66 40%,#1c3e66 100%);
     color: #ffff
+=======
+
 }
 
+/* body con dos navbars fijas */
+body {
+    padding-top: calc(var(--logo-h) + var(--nav-h));
+background: #0b203a;
+color: #eef3f6
+}
 header {
     position: relative;
-    z-index: 1030
+    
 }
+/* barra 1 */
 .navbar-logo {
+
     background-color: #1c3e66;
     box-shadow: none !important;
     z-index: 1031;
@@ -39,11 +50,20 @@ header {
 .bg-sutil {
     background: linear-gradient(0deg,#1c3e66bf 0%,#ffffff 30%,#ffffff 100%);
     color: rgb(0, 0, 0)
+
 }
 
-body {
-    padding-top: 120px;
+/* barra 2 */
+.navbar-secondary.fixed-top {
+    
+    top: var(--logo-h);
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    min-height: var(--nav-h);
+    background: #fff;
 }
+
 
 .img-cover {
     display: block;
@@ -82,4 +102,5 @@ body {
     border-radius: 16px;
     box-shadow: 5px 10px 20px rgba(0,0,0,.12);
 }
+
 
