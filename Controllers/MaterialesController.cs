@@ -1,8 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
-namespace WebApplication1.Controllers
-{
+using Microsoft.AspNetCore.Mvc;
+namespace WebApplication1.Controllers { 
+
     public class MaterialesController : Controller
     {
+
     private IActionResult Wip() => View("~/Views/Shared/Wip.cshtml");
 
 public IActionResult Index() => Wip();
@@ -14,12 +15,4 @@ public IActionResult Edit(int id) => Wip();
 public IActionResult Delete(int id) => Wip();
 [HttpPost, ActionName("Delete")] public IActionResult DeleteConfirmed(int id) { return Wip(); }
 }
-
-
-
-
-
-
-    
-    }
-
+}

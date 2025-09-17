@@ -1,116 +1,116 @@
-﻿html {
+<<<<<<< HEAD
+
+/* Solo portal */
+=======
+html, body {
     height: 100%;
-    margin: 0;
-    max-width: 1440px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0
 }
 
 body {
+    padding-top: 120px
+}
+>>>>>>> ce4ed77 (Cierre flujo WIP views)
+.hero-portal {
+    background: linear-gradient(90deg,#1c3e66bf 0%,#1c3e66 40%,#1c3e66 100%);
+    color: #ffff
+=======
 
-    padding-top: 100px;
-    background-color: rgba(0,0,0,0.82);
 }
 
-
-.hero-principal {
-    color: #ffff;
-    margin-left: auto;
-    margin-right: auto;
-    background-image: url(/images/misionburgiplot.jpeg);
-    background-size: cover;
-    background-position: center;
-    background-color: rgba(0,0,0,0.7);
-    background-blend-mode: multiply;
+<<<<<<< HEAD
+/* body con dos navbars fijas */
+body {
+    padding-top: calc(var(--logo-h) + var(--nav-h));
+background: #0b203a;
+color: #eef3f6
+}
+=======
+.navbar-logo .container {
+    justify-content: center
 }
 
-.hero-title {
- 
-    text-align: start;
-    color: darkorange;
-    filter: drop-shadow(5px 5px 15px);
-}
-
-@media (max-width: 768px) {
-    .hero-title {
-        font-size: 3rem;
-    }
-}
-
-
-/* Contenedor del header encima del contenido */
+>>>>>>> ce4ed77 (Cierre flujo WIP views)
 header {
     position: relative;
-    z-index: 1030;
+    
+}
+<<<<<<< HEAD
+/* barra 1 */
+=======
+
+>>>>>>> ce4ed77 (Cierre flujo WIP views)
+.navbar-logo {
+
+    background-color: #1c3e66;
+    box-shadow: none !important;
+    z-index: 1031;
 }
 
-/* Barra que queda activa */
-.navbar-secondary {
-    background-color: #b46a22;
-    z-index: 1030;
-    top: 10px
-}
-
-    /* Links del menú */
-    .navbar-secondary .nav-link {
-        color: #fff;
-        font-size: 1.1rem;
-    }
-
-        .navbar-secondary .nav-link:hover {
-            color: #d8d992;
-            transform: translateY(1px);
-        }
-
-/* Marca / logo */
 .navbar-brand {
-    padding: .95rem 0;
+    padding: .25rem 0;
     line-height: 1;
-    isolation: isolate;
+    isolation: isolate
 }
 
     .navbar-brand img.logo {
         display: block;
         width: auto;
         height: auto;
-        max-height: 44px;
-        object-fit: contain;
+        max-height: 64px;
+        object-fit: contain
     }
 
 .logo-outline {
-    filter: drop-shadow(-4px -4px 15px #d8d992) drop-shadow(5px 5px 15px #d8d992);
+    filter: drop-shadow(-4px -4px 10px rgba(255,255,255)) drop-shadow(5px 5px 10px rgba(255,255,255))
 }
 
-/* Centrar el logo en mobile, manteniendo toggler izq. y botones der. */
-.navbar-secondary .container {
-    position: relative;
+.navbar-secondary {
+    background-color: #1c3e66;
+    top: 86px;
+    z-index: 1030;
+}
+.navbar-secondary .nav-link {
+    color: #ffff
+}
+    .navbar-secondary .nav-link:hover {
+        color: aquamarine; transform:translateY(2px)
+    } 
+.bg-sutil {
+    background: linear-gradient(0deg,#1c3e66bf 0%,#ffffff 30%,#ffffff 100%);
+    color: rgb(0, 0, 0)
+
 }
 
-@media (max-width: 991.98px) { /* < lg */
-    .navbar-secondary .navbar-brand {
- 
-        left: 85%;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-    }
-
+<<<<<<< HEAD
+/* barra 2 */
+.navbar-secondary.fixed-top {
+    
+    top: var(--logo-h);
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    min-height: var(--nav-h);
+    background: #fff;
 }
+=======
+>>>>>>> ce4ed77 (Cierre flujo WIP views)
 
-@media (min-width: 992px) { /* ≥ lg */
-    .navbar-secondary .navbar-brand {
-        position: static;
-        transform: none;
-    }
-}
 
-/* -------- Hero secundario -------- */
-.hero-portal {
-    background: linear-gradient(180deg,#darkorange 5%,#d8d992 65%,#b46a22 75%¿);
-    color: #fff;
+.img-cover {
+    display: block;
     margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px 12px;
+    box-shadow: 10px 10px 10px rgba(0,0,0, 0.6);
 }
 
-/* -------- Botones / utilidades -------- */
+    .img-cover:hover {
+        transform: translate(-2px) scale(1.5);
+    }
 .btn-gradient {
     background-image: linear-gradient(to right, var(--primary-blue), var(--primary-green));
     border: none;
@@ -134,25 +134,11 @@ header {
     border-radius: 16px;
     box-shadow: 5px 10px 20px rgba(0,0,0,.12);
 }
-
-/* -------- Imágenes -------- */
-.img-cover {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 25px 25px;
-    box-shadow: 10px 10px 10px rgba(0,0,0, 0.6);
-}
+<<<<<<< HEAD
 
 
+=======
 main {
-    flex: 1;
+    flex: 1
 }
-
-/* Que los anclajes no queden tapados por la navbar fija */
-section[id] {
-    scroll-margin-top: 120px;
-}
+>>>>>>> ce4ed77 (Cierre flujo WIP views)

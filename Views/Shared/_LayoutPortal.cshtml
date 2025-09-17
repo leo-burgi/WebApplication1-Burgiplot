@@ -17,57 +17,60 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-secondary navbar-expand-lg fixed-top" data-bs-theme="light">
-            <div class="container align-items-center">
+        <nav class="navbar navbar-logo fixed-top shadow-sm" data-bs-theme="light">
+            <div class="container">
+                <a class="navbar-brand d-inline-flex align-items-center"  title="Inicio">
+=======
 
-                <button class="navbar-toggler glass d-lg-none me-2 order-1"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navPortal"
-                        aria-controls="navPortal"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-         
-                <a class="navbar-brand d-inline-flex align-items-center mx-auto mx-lg-0 order-1 order-lg-1"
-                   href="#nosotros" title="Inicio">
-                    <img src="~/images/logo-burgiplot.png" alt="Bürgiplot" class="logo logo-outline">
+                    <img src="~/images/logo-burgiplot.png" alt="Bürgiplot"
+                         class="logo logo-outline">
                 </a>
-
-                <div id="navPortal" class="collapse navbar-collapse justify-content-center order-4 w-100 w-lg-auto mt-2 mt-lg-0">
-                    <ul class="navbar-nav flex-wrap justify-content-center">
-                        <li class="nav-item mx-2">
-                            <a class="nav-link" href="#nosotros"><i class="bi bi-send-fill mx-2"></i>Misión</a>
-                        </li>
-                        <li class="nav-item mx-2">
-                            <a class="nav-link" href="#mision"><i class="bi bi-binoculars-fill mx-2"></i>Visión</a>
-                        </li>
-                        <li class="nav-item mx-2">
-                            <a class="nav-link" href="#vision"><i class="bi bi-heart-fill mx-2"></i>Valores</a>
-                        </li>
-                        <li class="nav-item mx-2">
-                            <a class="nav-link" href="#valores"><i class="bi bi-graph-up-arrow mx-2"></i>Objetivos</a>
-                        </li>
-                        <li class="nav-item mx-2">
-                            <a class="nav-link" href="#objetivos"><i class="bi bi-camera-fill mx-2"></i>Trabajos realizados</a>
-                        </li>
-                    </ul>
-                    <div class="d-flex gap-2 ms-2 ms-lg-auto order-lg-4">
-                        <a asp-controller="Clientes" asp-action="Index" class="btn glass btn-success btn-ingresar md-2">
-                            <i class="bi bi-box-arrow-in-right me-1"></i> Ingresar
-                        </a>
-                        <a asp-controller="Home" asp-action="Index" class="btn glass btn-danger btn-salir">
-                            <i class="bi bi-box-arrow-in-right me-1"></i> Salir
-                        </a>
-                    </div>
-                </div>
-                
             </div>
         </nav>
-    </header>
+        <nav class="navbar navbar-secondary navbar-expand-lg fixed-top" data-bs-theme="light">
+            <div class="container align">
+                <button class="navbar-toggler glass" type="button" data-bs-toggle="collapse" data-bs-target="#navPortal" aria-controls="navbarSecundario">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            
+            
+                <div id="navPortal" class="collapse navbar-collapse justify-content-center">
+                    <ul class="navbar-nav flex-wrap justify-content-center ">
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#mision"><i class="bi bi-send-fill mx-2"></i>Misión</a>
+                            
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#vision"><i class="bi bi-binoculars-fill mx-2"></i>Visión</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#valores"><i class="bi bi-heart-fill mx-2"></i>Valores</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#objetivos"><i class="bi bi-graph-up-arrow mx-2"></i>Objetivos</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#TrabajosRealizados"><i class="bi bi-camera-fill mx-2"></i>Trabajos realizados</a>
+                        </li>
+                    </ul>     
+                </div>
+                <div>
+                    <a href="#portal-top"></a>
 
+
+                    <a asp-controller="Clientes" asp-action="Index" class="btn glass btn-success btn-ingresar order-md-2">
+                        <i class="bi bi-box-arrow-in-right me-1"></i> Ingresar
+                    </a>
+                    <a asp-controller="Home" asp-action="Index" class="btn glass btn-danger btn-ingresar order-md-2">
+                        <i class="bi bi-box-arrow-in-right me-1"></i> Salir
+                    </a>
+                </div>
+
+            </div>
+           
+        </nav>
+        
+    </header>
     <main>
         @RenderBody()
     </main>
