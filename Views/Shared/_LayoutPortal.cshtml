@@ -17,6 +17,7 @@
 
 <body>
     <header>
+<<<<<<< HEAD
         <nav class="navbar navbar-secondary navbar-expand-lg fixed-top" data-bs-theme="light">
             <div class="container align-items-center">
 
@@ -27,9 +28,28 @@
                         aria-controls="navPortal"
                         aria-expanded="false"
                         aria-label="Toggle navigation">
+=======
+
+        <nav class="navbar navbar-logo fixed-top shadow-sm">
+            <div class="container">
+                <a class="navbar-brand d-inline-flex align-items-center"  title="Inicio">
+=======
+
+                    <img src="~/images/logo-burgiplot.png" alt="Bürgiplot"
+                         class="logo logo-outline">
+                </a>
+            </div>
+        </nav>
+
+        <nav class="navbar navbar-secondary navbar-expand-lg fixed-top ">
+            <div class="d-flex justify-content-between container">
+                <button class="navbar-toggler glass" type="button" data-bs-toggle="collapse" data-bs-target="#navPortal">
+
+>>>>>>> 034baf4fc6ed068e4ffe852184b5b730a9e5badd
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
+<<<<<<< HEAD
          
                 <a class="navbar-brand d-inline-flex align-items-center mx-auto mx-lg-0 order-1 order-lg-1"
                    href="#nosotros" title="Inicio">
@@ -64,6 +84,33 @@
                     </div>
                 </div>
                 
+=======
+
+                    <div id="navPortal" class="collapse navbar-collapse ">
+                        <ul class="navbar-nav flex-wrap justify-content-center pe-lg-4">
+                            <li class="nav-item"><a class="nav-link" href="#mision">Misión</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#vision">Visión</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#valores">Valores</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#objetivos">Objetivos</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#TrabajosRealizados">Trabajos realizados</a></li>
+                        </ul>
+                        
+                    </div>
+                    
+               
+                <div>
+                    <a href="#portal-top"></a>
+
+
+                    <a asp-controller="Clientes" asp-action="Index" class="btn glass btn-success btn-ingresar order-md-2">
+                        <i class="bi bi-box-arrow-in-right me-1"></i> Ingresar
+                    </a>
+                    <a asp-controller="Home" asp-action="Index" class="btn glass btn-danger btn-ingresar order-md-2">
+                        <i class="bi bi-box-arrow-in-right me-1"></i> Salir
+                    </a>
+                </div>
+
+>>>>>>> 034baf4fc6ed068e4ffe852184b5b730a9e5badd
             </div>
         </nav>
     </header>
