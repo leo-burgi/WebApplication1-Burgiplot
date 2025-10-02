@@ -18,7 +18,7 @@ header {
 }
 
 .navbar-logo {
-    background-color: #1c3e66;
+    background-color: #b46a22;
     box-shadow: none !important;
     z-index: 1031;
 }
@@ -42,7 +42,7 @@ header {
 }
 
 .navbar-secondary {
-    background-color: #1c3e66;
+    background-color: #b46a22;
     top: 86px;
     z-index: 1030;
 }
