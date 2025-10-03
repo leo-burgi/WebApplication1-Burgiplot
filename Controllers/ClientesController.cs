@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WebApplication1.Data;
 using WebApplication1.Models;
+using Microsoft.Data.SqlClient;
 
 namespace WebApplication1.Controllers
 {
@@ -50,9 +51,36 @@ namespace WebApplication1.Controllers
         public async Task<IActionResult> Create(Cliente cliente)
         {
             if (!ModelState.IsValid) return View(cliente);
-            _context.Add(cliente);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+
+            try
+            {
+                _context.Add(cliente);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+
+            }
+            catch (DbUpdateException ex) when (ex.InnerException is SqlException sqlEx)
+            {
+                switch (sqlEx.Number)
+                {
+
+                    case 50011: // Error de trigger personalizado
+                        ModelState.AddModelError(nameof(Cliente.DNI), "DNI incorrecto; debe tener 7 u 8 digitos.");
+                        break;
+                    case 50010:
+                        ModelState.AddModelError(nameof(Cliente.CUIT_CUIL), "CUIT/CUIL incorrecto; debe tener 11 digitos");
+                        break;
+                    case 2627: // Violación de restricción de clave única
+                    case 2601: // Violación de restricción de clave única (índice único)
+                        ModelState.AddModelError(nameof(Cliente.CUIT_CUIL), "El CUIT/CUIL ya existe en la base de datos.");
+                        break;
+                    
+                    default:
+                        ModelState.AddModelError(string.Empty, $"Error de base de datos ({sqlEx.Number}).Detalle: {sqlEx.Message}");
+                        break;
+                }
+                return View(cliente);
+            }
         }
 
         //--------------------------------------EDITAR--------------------------------------
@@ -78,6 +106,7 @@ namespace WebApplication1.Controllers
             {
                 _context.Update(cliente);
                 await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -85,7 +114,28 @@ namespace WebApplication1.Controllers
                     return NotFound();
                 throw;
             }
-            return RedirectToAction(nameof(Index));
+            catch (DbUpdateException ex) when (ex.InnerException is SqlException sqlEx)
+            {
+                switch (sqlEx.Number)
+                {
+                    case 50011: // Error de trigger personalizado
+                        ModelState.AddModelError(nameof(Cliente.DNI), "DNI incorrecto; debe tener 7 u 8 digitos.");
+                        break;
+                    case 50010:
+                        ModelState.AddModelError(nameof(Cliente.CUIT_CUIL), "CUIT/CUIL incorrecto; debe tener 11 digitos");
+                        break;
+                    case 2627: // Violación de restricción de clave única
+                    case 2601: // Violación de restricción de clave única (índice único)
+                        ModelState.AddModelError(nameof(Cliente.CUIT_CUIL), "El CUIT/CUIL ya existe en la base de datos.");
+                        break;
+                    
+                    default:
+                        ModelState.AddModelError(string.Empty, $"Error de base de datos ({sqlEx.Number}).Detalle: {sqlEx.Message}");
+                        break;
+                }
+                return View(cliente);
+            }
+            
         }
 
         //-------------------------------------ELIMINAR--------------------------------------

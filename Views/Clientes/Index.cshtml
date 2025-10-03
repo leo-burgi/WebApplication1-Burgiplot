@@ -30,10 +30,12 @@
                                 <thead class="table-light">
                                     <tr>
                                         <th>@Html.DisplayNameFor(model => model.Nombre)</th>
+                                        <th>@Html.DisplayNameFor(model => model.Apellido)</th>
                                         <th>@Html.DisplayNameFor(model => model.Dirección)</th>
                                         <th>@Html.DisplayNameFor(model => model.Telefono)</th>
                                         <th class="d-none d-md-table-cell">@Html.DisplayNameFor(model => model.Correo)</th>
                                         <th class="d-none d-md-table-cell">@Html.DisplayNameFor(model => model.DNI)</th>
+                                        <th class="d-none d-md-table-cell">@Html.DisplayNameFor(model => model.CUIT_CUIL)</th>
                                         <th class="text-end">Acciones</th>
                                     </tr>
                                 </thead>
@@ -42,10 +44,12 @@
                                 {
                                     <tr>
                                         <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Apellido)</td>
                                         <td>@Html.DisplayFor(modelItem => item.Dirección)</td>
                                         <td>@Html.DisplayFor(modelItem => item.Telefono)</td>
                                         <td class="d-none d-md-table-cell">@Html.DisplayFor(modelItem => item.Correo)</td>
                                         <td class="d-none d-md-table-cell">@Html.DisplayFor(modelItem => item.DNI)</td>
+                                        <td class="d-none d-md-table-cell">@Html.DisplayFor(modelItem => item.CUIT_CUIL)</td>
                                         <td class="text-end">
                                             <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-accion btn-editar btn-sm me-1">Editar</a>
                                             <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-accion btn-ver btn-sm me-1">Detalles</a>
