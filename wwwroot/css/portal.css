@@ -7,11 +7,9 @@
 }
 
 body {
-
-    padding-top: 100px;
-    background-color: rgba(0,0,0,0.82);
+    
+    background: linear-gradient(50deg, rgba(255,255,255,.1) .2px, transparent 2px) 0 0/4px 4px, linear-gradient(rgba(255,255,255,.1) .2px, transparent 2px) 0 0/4px 4px, #3b250fdc;
 }
-
 
 .hero-principal {
     color: #ffff;
@@ -22,6 +20,7 @@ body {
     background-position: center;
     background-color: rgba(0,0,0,0.7);
     background-blend-mode: multiply;
+    padding-top: 120px;
 }
 
 .hero-title {
@@ -38,20 +37,19 @@ body {
 }
 
 
-/* Contenedor del header encima del contenido */
+
 header {
     position: relative;
     z-index: 1030;
 }
 
-/* Barra que queda activa */
+
 .navbar-secondary {
     background-color: #b46a22;
     z-index: 1030;
-    top: 10px
+    top: 10px;
 }
 
-    /* Links del menú */
     .navbar-secondary .nav-link {
         color: #fff;
         font-size: 1.1rem;
@@ -62,11 +60,12 @@ header {
             transform: translateY(1px);
         }
 
-/* Marca / logo */
+
 .navbar-brand {
     padding: .95rem 0;
     line-height: 1;
     isolation: isolate;
+    
 }
 
     .navbar-brand img.logo {
@@ -103,12 +102,13 @@ header {
     }
 }
 
-/* -------- Hero secundario -------- */
 .hero-portal {
-    background: linear-gradient(180deg,#darkorange 5%,#d8d992 65%,#b46a22 75%¿);
+    background: linear-gradient(150deg, #b46a2159 5%, #d8d9957f 65%, #b46a218c 75%);
     color: #fff;
     margin-left: auto;
+    border-radius: 25px;
 }
+
 
 /* -------- Botones / utilidades -------- */
 .btn-gradient {

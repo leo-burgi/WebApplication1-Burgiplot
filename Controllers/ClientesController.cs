@@ -51,7 +51,14 @@ namespace WebApplication1.Controllers
         public async Task<IActionResult> Create(Cliente cliente)
         {
             if (!ModelState.IsValid) return View(cliente);
-
+            
+            //verificacion de unicidad de DNI
+            if (await _context.Clientes.AnyAsync(c => c.DNI == cliente.DNI))
+            {
+                ModelState.AddModelError(nameof(Cliente.DNI), "Ya existe un cliente con este DNI.");
+                return View(cliente);
+            }
+           
             try
             {
                 _context.Add(cliente);
@@ -71,10 +78,17 @@ namespace WebApplication1.Controllers
                         ModelState.AddModelError(nameof(Cliente.CUIT_CUIL), "CUIT/CUIL incorrecto; debe tener 11 digitos");
                         break;
                     case 2627: // Violación de restricción de clave única
-                    case 2601: // Violación de restricción de clave única (índice único)
-                        ModelState.AddModelError(nameof(Cliente.CUIT_CUIL), "El CUIT/CUIL ya existe en la base de datos.");
+                    case 2601: // unique
+                        var m = sqlEx.Message;
+                        if (m.Contains("UX_Cliente_DNI"))
+                            ModelState.AddModelError(nameof(Cliente.DNI), "Ya existe un cliente con este DNI.");
+
+                        else if (m.Contains("UX_Cliente_CUIT_CUIL"))
+                            ModelState.AddModelError(nameof(Cliente.CUIT_CUIL), "Ya existe un cliente con este CUIT/CUIL.");
+                        else
+                            ModelState.AddModelError(string.Empty, "Registro duplicado (índice único).");
                         break;
-                    
+
                     default:
                         ModelState.AddModelError(string.Empty, $"Error de base de datos ({sqlEx.Number}).Detalle: {sqlEx.Message}");
                         break;
