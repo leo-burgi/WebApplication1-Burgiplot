@@ -14,15 +14,25 @@
                         <h4 class=mb-0 fw-bold">Listar Clientes</h4>
                     </div>
 
-                    <!-- Botón crear -->
-                <div class="card-body">
-                    <div class="mb-3">
+                   
+                <div class="card-body ">
+                    <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+                        <!-- Botón crear -->
                         <a asp-action="Create" class="btn glass text-success btn-outline-light">
                             <i class="bi bi-plus-circle"></i> Crear nuevo
                         </a>
-
+                         <!-- Barra de búsqueda -->
+                        <form asp-action="Index" method="get" class="d-flex align-items-center flex-grow-1">
+                            <div class="input-group" style="max-width: auto;">
+                                <input type="text" name="searchString" class="form-control glass me-2 flex-grow-1" 
+                                        placeholder="Buscar por nombre, apellido o dirección" 
+                                        value="@ViewData["CurrentFilter"]" />
+                                <button type="submit" class="btn glass text-success btn-outline-light">
+                                    <i class="bi bi-search"></i> Buscar
+                                </button>
+                                </div>
+                        </form>
                     </div>
-
                     <!-- Tabla -->
                     <div class="card shadow rounded-4">
                         <div class="card-body">
