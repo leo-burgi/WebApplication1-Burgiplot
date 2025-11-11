@@ -21,9 +21,26 @@ namespace WebApplication1.Controllers
         }
 
         //------------------------------------INDEX--------------------------------------
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string? searchString)
         {
-            var clientes = await _context.Clientes.ToListAsync();
+            ViewData["CurrentFilter"] = searchString;
+
+            // Construir la consulta de forma diferida
+            var query = _context.Clientes.AsQueryable().AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(searchString))
+            {
+                var s = searchString.Trim();
+
+                query = query.Where(c =>
+                    EF.Functions.Like(c.Nombre, $"%{s}%") ||
+                    EF.Functions.Like(c.Apellido, $"%{s}%") ||
+                    (c.Dirección!= null && EF.Functions.Like(c.Dirección, $"%{s}%"))
+                );
+            }
+
+            var clientes = await query.OrderBy(c => c.Apellido)
+                .ThenBy(c=>c.Nombre).ToListAsync();
             return View(clientes);
         }
 
