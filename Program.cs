@@ -1,20 +1,17 @@
 using Microsoft.EntityFrameworkCore;
 using WebApplication1.Data;
+using WebApplication1.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 
+builder.Services.AddDbContext<BurgiplotContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-Console.WriteLine("DB => " + builder.Configuration.GetConnectionString("DefaultConnection"));
-
-builder.Services.AddDbContext<BurgiplotContext>(opts =>
-    opts.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
-        .EnableDetailedErrors()
-        .EnableSensitiveDataLogging()
-        .LogTo(Console.WriteLine, LogLevel.Information));
-
+// Inyección de dependencia del servicio de clientes
+builder.Services.AddScoped<IClienteService, ClienteService>();
 
 var app = builder.Build();
 

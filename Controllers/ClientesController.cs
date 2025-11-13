@@ -7,17 +7,25 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WebApplication1.Data;
 using WebApplication1.Models;
+using WebApplication1.Services;
 using Microsoft.Data.SqlClient;
 
 namespace WebApplication1.Controllers
 {
     public class ClientesController : Controller
     {
-        //---------Comunicación con la base de datos
-        private readonly BurgiplotContext _context;
+        // -----------ANTES COMUNICACIÓN DIRECTA CON LA BASE DE DATOS A TRAVÉS DEL CONTEXTO DE EF CORE
+        /*private readonly BurgiplotContext _context;
         public ClientesController(BurgiplotContext context)
         {
             _context = context;
+        }*/
+
+        // AHORA COMUNICACIÓN A TRAVÉS DEL SERVICIO
+        private readonly IClienteService _clienteService;
+        public ClientesController(IClienteService clienteService)
+        {
+            _clienteService = clienteService;
         }
 
         //------------------------------------INDEX--------------------------------------
@@ -25,8 +33,9 @@ namespace WebApplication1.Controllers
         {
             ViewData["CurrentFilter"] = searchString;
 
-            // Construir la consulta de forma diferida
-            var query = _context.Clientes.AsQueryable().AsQueryable();
+            // ---------------------ANTES CONSULTA DIRECTA
+
+            /*var query = _context.Clientes.AsQueryable().AsQueryable();
 
             if (!string.IsNullOrWhiteSpace(searchString))
             {
@@ -40,7 +49,10 @@ namespace WebApplication1.Controllers
             }
 
             var clientes = await query.OrderBy(c => c.Apellido)
-                .ThenBy(c=>c.Nombre).ToListAsync();
+                .ThenBy(c=>c.Nombre).ToListAsync();*/
+
+            // AHORA USO EL SERVICIO
+            var clientes = await _clienteService.GetAllClientesAsync(searchString);
             return View(clientes);
         }
 
@@ -49,7 +61,8 @@ namespace WebApplication1.Controllers
         {
             if (id == null) return NotFound();
 
-            var cliente = await _context.Clientes.FirstOrDefaultAsync(m => m.Id == id);
+            //var cliente = await _context.Clientes.FirstOrDefaultAsync(m => m.Id == id);
+            var cliente = await _clienteService.GetClienteByIdAsync(id.Value);
             if (cliente == null) return NotFound();
 
             return View(cliente);
@@ -69,8 +82,8 @@ namespace WebApplication1.Controllers
         {
             if (!ModelState.IsValid) return View(cliente);
             
-            //verificacion de unicidad de DNI
-            if (await _context.Clientes.AnyAsync(c => c.DNI == cliente.DNI))
+            //------ ANTES : verificacion de unicidad de DNI
+            /* if (await _context.Clientes.AnyAsync(c => c.DNI == cliente.DNI))
             {
                 ModelState.AddModelError(nameof(Cliente.DNI), "Ya existe un cliente con este DNI.");
                 return View(cliente);
@@ -83,7 +96,18 @@ namespace WebApplication1.Controllers
                 return RedirectToAction(nameof(Index));
 
             }
-            catch (DbUpdateException ex) when (ex.InnerException is SqlException sqlEx)
+            catch (DbUpdateException ex) when (ex.InnerException is SqlException sqlEx)*/
+            try
+            {
+                await _clienteService.CreateClienteAsync(cliente);
+                return RedirectToAction(nameof(Index));
+            }
+            catch (InvalidOperationException ex) when (ex.Message== "DNI duplicado")
+            {
+                ModelState.AddModelError(nameof(Cliente.DNI), "Ya existe un cliente con este DNI.");
+                return View(cliente);
+            }
+            catch (SqlException sqlEx)
             {
                 switch (sqlEx.Number)
                 {
@@ -120,9 +144,8 @@ namespace WebApplication1.Controllers
         {
             if (id == null) return NotFound();
 
-            var cliente = await _context.Clientes.FindAsync(id);
+            var cliente = await _clienteService.GetClienteByIdAsync(id.Value);
             if (cliente == null) return NotFound();
-
             return View(cliente);
         }
 
@@ -133,17 +156,19 @@ namespace WebApplication1.Controllers
         {
             if (id != cliente.Id) return NotFound();
             if (!ModelState.IsValid) return View(cliente);
+            
             try
             {
-                _context.Update(cliente);
-                await _context.SaveChangesAsync();
+                // _context.Update(cliente);
+                //await _context.SaveChangesAsync();
+                await _clienteService.UpdateClienteAsync(cliente);
                 return RedirectToAction(nameof(Index));
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!_context.Clientes.Any(e => e.Id == id))
+                //if (!_clienteService.Clientes.Any(e => e.Id == id))
                     return NotFound();
-                throw;
+                //throw;
             }
             catch (DbUpdateException ex) when (ex.InnerException is SqlException sqlEx)
             {
@@ -174,7 +199,7 @@ namespace WebApplication1.Controllers
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null) return NotFound();
-            var cliente = await _context.Clientes.FirstOrDefaultAsync(m => m.Id == id);
+            var cliente = await _clienteService.GetClienteByIdAsync(id.Value);
             if (cliente == null) return NotFound();
             return View(cliente);
         }
@@ -184,12 +209,16 @@ namespace WebApplication1.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var cliente = await _context.Clientes.FindAsync(id);
+            // -----------ANTES ELIMINACIÓN DIRECTA
+            /*var cliente = await _context.Clientes.FindAsync(id);
             if (cliente != null)
             {
                 _context.Clientes.Remove(cliente);
                 await _context.SaveChangesAsync();
-            }
+            }*/
+
+            // AHORA A TRAVÉS DEL SERVICIO
+            await _clienteService.DeleteClienteAsync(id);
 
             return RedirectToAction(nameof(Index));
         }
